@@ -1,6 +1,8 @@
 using BBKRPGSimulator;
 using BBKRPGSimulator.Graphics;
 using System;
+using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,14 +12,49 @@ public class UnitySimulator : MonoBehaviour
     public Image image;
     public Texture2D texture2D;
     public static UnitySimulator Instance;
+    public GameObject ScrollView;
+    public Toggle togglePrefab;
 
     private void Awake()
     {
-        Instance = this; 
+        Instance = this;
+        togglePrefab.gameObject.SetActive(false);
+        image.gameObject.SetActive(false);
     }
 
     // Start is called before the first frame update
     void Start()
+    {
+        StartCoroutine(Tool.LoadString(Application.streamingAssetsPath + "/gamelist.json", delegate (string json)
+        {
+            try
+            {
+                GameList gameList = JsonUtility.FromJson<GameList>(json);
+                foreach (string name in gameList.Names)
+                {
+                    Toggle toggle = Instantiate(togglePrefab, togglePrefab.transform.parent);
+                    toggle.name = name;
+                    toggle.transform.Find("Label").GetComponent<Text>().text = name;
+                    toggle.onValueChanged.AddListener((value) =>
+                    {
+                        if (value)
+                        {
+                            ScrollView.SetActive(false);
+                            StartGame(name);
+                            image.gameObject.SetActive(true);
+                        }
+                    });
+                    toggle.gameObject.SetActive(true);
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.LogError(e);
+            }
+        }));
+    }
+
+    void StartGame(string name)
     {
         Application.targetFrameRate = 30;
         Application.runInBackground = true;
@@ -25,7 +62,7 @@ public class UnitySimulator : MonoBehaviour
         image.material.mainTexture = texture2D;
         _simulator = gameObject.AddComponent<RPGSimulator>();
         _simulator.RenderFrame += GameViewRenderFrame;
-        string libPath = Application.streamingAssetsPath + "/Game/xkx.lib";
+        string libPath = Application.streamingAssetsPath + "/Game/" + name + ".lib";
         Debug.LogWarning("libPath:" + libPath);
         StartCoroutine(Tool.LoadData(libPath, delegate (byte[] data)
         {
@@ -40,7 +77,7 @@ public class UnitySimulator : MonoBehaviour
             }
             else
             {
-                Debug.LogError("”Œœ∑libº”‘ÿ ß∞‹");
+                Debug.LogError("Âä†ËΩΩÊ∏∏ÊàèlibÂ§±Ë¥•");
             }
         }));
     }
@@ -125,6 +162,15 @@ public class UnitySimulator : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        _simulator.Stop();
+        if (_simulator != null)
+        {
+            _simulator.Stop();
+        }
     }
+}
+
+[Serializable]
+public class GameList
+{
+    public List<string> Names = new List<string>();
 }
