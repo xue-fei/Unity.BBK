@@ -2,9 +2,11 @@ using BBKRPGSimulator;
 using BBKRPGSimulator.Graphics;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+#if !UNITY_EDITOR && UNITY_WEBGL
+using System.Runtime.InteropServices;
+#endif
 
 public class UnitySimulator : MonoBehaviour
 {
@@ -14,6 +16,11 @@ public class UnitySimulator : MonoBehaviour
     public static UnitySimulator Instance;
     public GameObject ScrollView;
     public Toggle togglePrefab;
+
+#if !UNITY_EDITOR && UNITY_WEBGL
+    [DllImport("__Internal")]
+    private static extern bool IsMobile();
+#endif
 
     private void Awake()
     {
@@ -25,6 +32,11 @@ public class UnitySimulator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        var isMobile = false;
+#if !UNITY_EDITOR && UNITY_WEBGL
+        isMobile = IsMobile();
+#endif
+        Debug.Log("isMobile:" + isMobile);
         StartCoroutine(Tool.LoadString(Application.streamingAssetsPath + "/gamelist.json", delegate (string json)
         {
             try

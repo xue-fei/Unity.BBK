@@ -1,9 +1,6 @@
 ﻿using System.IO;
-using System;
 using UnityEditor;
 using UnityEngine;
-using NUnit.Framework;
-using System.Collections.Generic;
 
 public class EditorTools : MonoBehaviour
 {
