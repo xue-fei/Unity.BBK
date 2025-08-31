@@ -171,6 +171,10 @@ namespace BBKRPGSimulator.View
             }
             else if (key == SimulatorKeys.KEY_ENTER)
             {
+                if(_texts[_index] == _empty)
+                {
+                    return;
+                }
                 var fileName = @Application.persistentDataPath + "/" + Context.LibData.Hash + "_" + _index;
                 Stream stream = Context.StreamProvider.GetOrCreateStream(fileName);
 
@@ -221,8 +225,8 @@ namespace BBKRPGSimulator.View
         }
 
 #if UNITY_WEBGL && !UNITY_EDITOR
-    [DllImport("__Internal")]
-    private static extern void SyncDB();
+        [DllImport("__Internal")]
+        private static extern void SyncDB();
 #endif
 
         /// <summary>
@@ -248,8 +252,8 @@ namespace BBKRPGSimulator.View
             {
                 stream.Dispose();
 #if UNITY_WEBGL && !UNITY_EDITOR
-    //刷新数据到IndexedDB
-    SyncDB();
+                //刷新数据到IndexedDB
+                SyncDB();
 #endif
             }
             return true;
