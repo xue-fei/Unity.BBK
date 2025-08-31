@@ -22,6 +22,9 @@ public class UnitySimulator : MonoBehaviour
     private static extern bool IsMobile();
 #endif
 
+    float currentTime = 0.5f;
+    float invokeTime;
+
     private void Awake()
     {
         Instance = this;
@@ -97,6 +100,10 @@ public class UnitySimulator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (_simulator == null)
+        {
+            return;
+        }
         //if (Input.GetMouseButtonDown(0))
         //{
         //    _simulator.KeyPressed(SimulatorKeys.KEY_ENTER);
@@ -105,6 +112,7 @@ public class UnitySimulator : MonoBehaviour
         //{
         //    _simulator.KeyReleased(SimulatorKeys.KEY_ENTER);
         //}
+
         if (Input.GetKeyDown(KeyCode.KeypadEnter))
         {
             _simulator.KeyPressed(SimulatorKeys.KEY_ENTER);
@@ -121,6 +129,7 @@ public class UnitySimulator : MonoBehaviour
         {
             _simulator.KeyReleased(SimulatorKeys.KEY_ENTER);
         }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             _simulator.KeyPressed(SimulatorKeys.KEY_ENTER);
@@ -129,15 +138,18 @@ public class UnitySimulator : MonoBehaviour
         {
             _simulator.KeyReleased(SimulatorKeys.KEY_ENTER);
         }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             _simulator.KeyReleased(SimulatorKeys.KEY_CANCEL);
         }
-        if (Input.GetKeyDown(KeyCode.W))
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             _simulator.KeyPressed(SimulatorKeys.KEY_UP);
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+
+        if (Input.GetKeyDown(KeyCode.W))
         {
             _simulator.KeyPressed(SimulatorKeys.KEY_UP);
         }
@@ -145,15 +157,7 @@ public class UnitySimulator : MonoBehaviour
         {
             _simulator.KeyPressed(SimulatorKeys.KEY_DOWN);
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            _simulator.KeyPressed(SimulatorKeys.KEY_DOWN);
-        }
         if (Input.GetKeyDown(KeyCode.A))
-        {
-            _simulator.KeyPressed(SimulatorKeys.KEY_LEFT);
-        }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             _simulator.KeyPressed(SimulatorKeys.KEY_LEFT);
         }
@@ -161,9 +165,73 @@ public class UnitySimulator : MonoBehaviour
         {
             _simulator.KeyPressed(SimulatorKeys.KEY_RIGHT);
         }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            _simulator.KeyPressed(SimulatorKeys.KEY_LEFT);
+        }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             _simulator.KeyPressed(SimulatorKeys.KEY_RIGHT);
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            _simulator.KeyPressed(SimulatorKeys.KEY_UP);
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            _simulator.KeyPressed(SimulatorKeys.KEY_DOWN);
+        }
+
+
+        if (Input.anyKey)
+        {
+            invokeTime += Time.deltaTime;
+            foreach (KeyCode keyCode in Enum.GetValues(typeof(KeyCode)))
+            {
+                if (Input.GetKey(keyCode))
+                {
+                    invokeTime += Time.deltaTime;
+                    if (invokeTime - currentTime > 0)
+                    {
+                        RepeatKey(keyCode);
+                        invokeTime = 0;
+                    }
+                }
+            }
+        }
+        else
+        {
+            if (invokeTime != currentTime)
+            {
+                invokeTime = currentTime;
+            }
+        }
+    }
+
+    private void RepeatKey(KeyCode keyCode)
+    {
+        switch (keyCode)
+        {
+            case KeyCode.W:
+            case KeyCode.UpArrow:
+                _simulator.KeyPressed(SimulatorKeys.KEY_UP);
+                break;
+
+            case KeyCode.S:
+            case KeyCode.DownArrow:
+                _simulator.KeyPressed(SimulatorKeys.KEY_DOWN);
+                break;
+
+            case KeyCode.A:
+            case KeyCode.LeftArrow:
+                _simulator.KeyPressed(SimulatorKeys.KEY_LEFT);
+                break;
+
+            case KeyCode.D:
+            case KeyCode.RightArrow:
+                _simulator.KeyPressed(SimulatorKeys.KEY_RIGHT);
+                break;
         }
     }
 
