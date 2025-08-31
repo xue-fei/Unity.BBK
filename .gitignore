@@ -14,3 +14,4 @@ UserSettings/Layouts/default-2021.dwlt
 Assets/StreamingAssets/build_info
 Assets/StreamingAssets/build_info.meta
 ProjectSettings/boot.config
+*.dwlt

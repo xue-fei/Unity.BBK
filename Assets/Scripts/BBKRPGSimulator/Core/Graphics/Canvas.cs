@@ -4,23 +4,23 @@ using System.Drawing;
 namespace BBKRPGSimulator.Graphics
 {
     /// <summary>
-    /// »­²¼
+    /// ç”»å¸ƒ
     /// </summary>
     internal class Canvas : ICanvas
     {
-        #region ×Ö¶Î
+        #region å­—æ®µ
 
         /// <summary>
-        /// µ±Ç°»­²¼±³¾°
+        /// å½“å‰ç”»å¸ƒèƒŒæ™¯
         /// </summary>
         public ImageBuilder Background { get; private set; }
 
-        #endregion ×Ö¶Î
+        #endregion å­—æ®µ
 
-        #region ¹¹Ôìº¯Êı
+        #region æ„é€ å‡½æ•°
 
         /// <summary>
-        /// ĞÂ½¨»­²¼²¢ÉèÖÃ±³¾°
+        /// æ–°å»ºç”»å¸ƒå¹¶è®¾ç½®èƒŒæ™¯
         /// </summary>
         /// <param name="bitmap"></param>
         internal Canvas(ImageBuilder bitmap)
@@ -28,12 +28,12 @@ namespace BBKRPGSimulator.Graphics
             Background = bitmap;
         }
 
-        #endregion ¹¹Ôìº¯Êı
+        #endregion æ„é€ å‡½æ•°
 
-        #region ·½·¨
+        #region æ–¹æ³•
 
         /// <summary>
-        /// »æÖÆÍ¼Ïñ
+        /// ç»˜åˆ¶å›¾åƒ
         /// </summary>
         /// <param name="bitmap"></param>
         /// <param name="left"></param>
@@ -44,7 +44,7 @@ namespace BBKRPGSimulator.Graphics
         }
 
         /// <summary>
-        /// Ìî³äÑÕÉ«
+        /// å¡«å……é¢œè‰²
         /// </summary>
         /// <param name="color"></param>
         public void DrawColor(int color)
@@ -53,7 +53,7 @@ namespace BBKRPGSimulator.Graphics
         }
 
         /// <summary>
-        /// »­Ïß
+        /// ç”»çº¿
         /// </summary>
         /// <param name="startX"></param>
         /// <param name="startY"></param>
@@ -66,7 +66,7 @@ namespace BBKRPGSimulator.Graphics
         }
 
         /// <summary>
-        /// »æÖÆÁ¬ĞøÏß¶Î£¿£¿£¿
+        /// ç»˜åˆ¶è¿ç»­çº¿æ®µï¼Ÿï¼Ÿï¼Ÿ
         /// </summary>
         /// <param name="pts"></param>
         /// <param name="paint"></param>
@@ -80,7 +80,7 @@ namespace BBKRPGSimulator.Graphics
         }
 
         /// <summary>
-        /// »æÖÆ¾ØĞÎ
+        /// ç»˜åˆ¶çŸ©å½¢
         /// </summary>
         /// <param name="left"></param>
         /// <param name="top"></param>
@@ -93,7 +93,7 @@ namespace BBKRPGSimulator.Graphics
         }
 
         /// <summary>
-        /// »æÖÆ¾ØĞÎ
+        /// ç»˜åˆ¶çŸ©å½¢
         /// </summary>
         /// <param name="rectangle"></param>
         /// <param name="pait"></param>
@@ -103,7 +103,7 @@ namespace BBKRPGSimulator.Graphics
         }
 
         /// <summary>
-        /// Ëõ·Å»­Ãæ
+        /// ç¼©æ”¾ç”»é¢
         /// </summary>
         /// <param name="mScale"></param>
         /// <param name="mScale2"></param>
@@ -113,7 +113,7 @@ namespace BBKRPGSimulator.Graphics
         }
 
         /// <summary>
-        /// ÉèÖÃ»­²¼±³¾°
+        /// è®¾ç½®ç”»å¸ƒèƒŒæ™¯
         /// </summary>
         /// <param name="bitmap"></param>
         public void SetBitmap(ImageBuilder bitmap)
@@ -122,7 +122,7 @@ namespace BBKRPGSimulator.Graphics
         }
 
         /// <summary>
-        /// »æÖÆ¾ØĞÎ
+        /// ç»˜åˆ¶çŸ©å½¢
         /// </summary>
         /// <param name="left"></param>
         /// <param name="top"></param>
@@ -145,6 +145,6 @@ namespace BBKRPGSimulator.Graphics
             }
         }
 
-        #endregion ·½·¨
+        #endregion æ–¹æ³•
     }
 }
