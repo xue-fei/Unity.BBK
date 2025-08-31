@@ -2,7 +2,6 @@ using System;
 
 using BBKRPGSimulator.Graphics;
 using BBKRPGSimulator.Graphics.Util;
-using UnityEngine;
 
 namespace BBKRPGSimulator.Lib
 {
