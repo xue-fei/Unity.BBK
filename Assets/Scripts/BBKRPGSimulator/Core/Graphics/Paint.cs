@@ -1,40 +1,40 @@
 namespace BBKRPGSimulator.Graphics
 {
     /// <summary>
-    /// »­±ÊĞÅÏ¢
+    /// ç”»ç¬”ä¿¡æ¯
     /// </summary>
     public class Paint
     {
-        #region ÊôĞÔ
+        #region å±æ€§
 
         /// <summary>
-        /// ÑÕÉ«
+        /// é¢œè‰²
         /// </summary>
         public int Color { get; private set; }
 
         /// <summary>
-        /// ÂÖÀª¿í¶È
+        /// è½®å»“å®½åº¦
         /// </summary>
         public int StrokeWidth { get; set; } = 0;
 
         /// <summary>
-        /// »æÖÆ·ç¸ñ
+        /// ç»˜åˆ¶é£æ ¼
         /// </summary>
         public PaintStyle Style { get; private set; }
 
-        #endregion ÊôĞÔ
+        #endregion å±æ€§
 
-        #region ¹¹Ôìº¯Êı
+        #region æ„é€ å‡½æ•°
 
         /// <summary>
-        /// »­±ÊĞÅÏ¢
+        /// ç”»ç¬”ä¿¡æ¯
         /// </summary>
         public Paint()
         {
         }
 
         /// <summary>
-        /// »­±ÊĞÅÏ¢
+        /// ç”»ç¬”ä¿¡æ¯
         /// </summary>
         /// <param name="style"></param>
         public Paint(PaintStyle style)
@@ -43,7 +43,7 @@ namespace BBKRPGSimulator.Graphics
         }
 
         /// <summary>
-        /// »­±ÊĞÅÏ¢
+        /// ç”»ç¬”ä¿¡æ¯
         /// </summary>
         /// <param name="colorValue"></param>
         public Paint(int colorValue)
@@ -52,7 +52,7 @@ namespace BBKRPGSimulator.Graphics
         }
 
         /// <summary>
-        /// »­±ÊĞÅÏ¢
+        /// ç”»ç¬”ä¿¡æ¯
         /// </summary>
         /// <param name="style"></param>
         /// <param name="colorValue"></param>
@@ -62,12 +62,12 @@ namespace BBKRPGSimulator.Graphics
             Color = colorValue;
         }
 
-        #endregion ¹¹Ôìº¯Êı
+        #endregion æ„é€ å‡½æ•°
 
-        #region ·½·¨
+        #region æ–¹æ³•
 
         /// <summary>
-        /// ÉèÖÃÑÕÉ«
+        /// è®¾ç½®é¢œè‰²
         /// </summary>
         /// <param name="colorValue"></param>
         public void SetColor(int colorValue)
@@ -76,7 +76,7 @@ namespace BBKRPGSimulator.Graphics
         }
 
         /// <summary>
-        /// ÉèÖÃÂÖÀª¿í¶È
+        /// è®¾ç½®è½®å»“å®½åº¦
         /// </summary>
         /// <param name="width"></param>
         public void SetStrokeWidth(int width)
@@ -85,7 +85,7 @@ namespace BBKRPGSimulator.Graphics
         }
 
         /// <summary>
-        /// ÉèÖÃ·ç¸ñ
+        /// è®¾ç½®é£æ ¼
         /// </summary>
         /// <param name="style"></param>
         public void SetStyle(PaintStyle style)
@@ -93,6 +93,6 @@ namespace BBKRPGSimulator.Graphics
             Style = style;
         }
 
-        #endregion ·½·¨
+        #endregion æ–¹æ³•
     }
 }
