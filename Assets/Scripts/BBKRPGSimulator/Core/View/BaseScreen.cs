@@ -4,40 +4,40 @@ using BBKRPGSimulator.Graphics.Util;
 namespace BBKRPGSimulator.View
 {
     /// <summary>
-    /// »ù´¡Screen
+    /// åŸºç¡€Screen
     /// </summary>
     internal abstract class BaseScreen : ContextDependent
     {
-        #region ÊôĞÔ
+        #region å±æ€§
 
         /// <summary>
-        /// ÎÄ±¾³ÊÏÖÆ÷
+        /// æ–‡æœ¬å‘ˆç°å™¨
         /// </summary>
         public TextRender TextRender => Context.TextRender;
 
-        #endregion ÊôĞÔ
+        #endregion å±æ€§
 
-        #region ¹¹Ôìº¯Êı
+        #region æ„é€ å‡½æ•°
 
         /// <summary>
-        /// »ù´¡Screen
+        /// åŸºç¡€Screen
         /// </summary>
         /// <param name="context"></param>
         public BaseScreen(SimulatorContext context) : base(context)
         { }
 
-        #endregion ¹¹Ôìº¯Êı
+        #endregion æ„é€ å‡½æ•°
 
-        #region ·½·¨
+        #region æ–¹æ³•
 
         /// <summary>
-        /// ½«µ±Ç°ÆÁÄ»»æÖÆµ½Ö¸¶¨canvasÉÏ
+        /// å°†å½“å‰å±å¹•ç»˜åˆ¶åˆ°æŒ‡å®šcanvasä¸Š
         /// </summary>
         /// <param name="canvas"></param>
         public abstract void Draw(ICanvas canvas);
 
         /// <summary>
-        /// ÊÇ·ñµ¯³ö
+        /// æ˜¯å¦å¼¹å‡º
         /// </summary>
         /// <returns></returns>
         public virtual bool IsPopup()
@@ -46,23 +46,23 @@ namespace BBKRPGSimulator.View
         }
 
         /// <summary>
-        /// °´ÏÂ¼ü
+        /// æŒ‰ä¸‹é”®
         /// </summary>
         /// <param name="key"></param>
         public abstract void OnKeyDown(int key);
 
         /// <summary>
-        /// ·Å¿ª¼ü
+        /// æ”¾å¼€é”®
         /// </summary>
         /// <param name="key"></param>
         public abstract void OnKeyUp(int key);
 
         /// <summary>
-        /// ¸üĞÂ
+        /// æ›´æ–°
         /// </summary>
         /// <param name="delta"></param>
         public abstract void Update(long delta);
 
-        #endregion ·½·¨
+        #endregion æ–¹æ³•
     }
 }
