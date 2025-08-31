@@ -18,9 +18,9 @@ namespace BBKRPGSimulator.Lib
         public const int HEIGHT = Constants.SCREEN_HEIGHT / 16;
 
         /// <summary>
-        /// 横向渲染的地图块总数
+        /// 横向渲染的地图块总数 // - 1
         /// </summary>
-        public const int WIDTH = Constants.SCREEN_WIDTH / 16 - 1;
+        public const int WIDTH = Constants.SCREEN_WIDTH / 16;
 
         /// <summary>
         /// 地图数据 两个字节表示一个地图快（从左到右，从上到下）
@@ -119,7 +119,8 @@ namespace BBKRPGSimulator.Lib
             {
                 for (int x = 0; x < minX; x++)
                 {
-                    _tiles.Draw(canvas, x * Tiles.WIDTH + Constants.MAP_LEFT_OFFSET,
+                    // + Constants.MAP_LEFT_OFFSET
+                    _tiles.Draw(canvas, x * Tiles.WIDTH,
                             y * Tiles.HEIGHT, GetTileIndex(left + x, top + y));
                 }
             }
