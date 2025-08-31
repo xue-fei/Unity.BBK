@@ -189,7 +189,8 @@ namespace BBKRPGSimulator
             {
                 player.DrawWalkingSprite(canvas, MapScreenPos);
             }
-            Context.Util.DrawSideFrame(canvas);
+            //不绘制屏幕两边的竖线
+            //Context.Util.DrawSideFrame(canvas);
         }
 
         /// <summary>

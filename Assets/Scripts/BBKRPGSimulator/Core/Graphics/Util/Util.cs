@@ -40,7 +40,10 @@ namespace BBKRPGSimulator.Graphics.Util
         #endregion 构造函数
 
         #region 方法
-
+        /// <summary>
+        /// 屏幕两边的竖线
+        /// </summary>
+        /// <param name="canvas"></param>
         public void DrawSideFrame(ICanvas canvas)
         {
             canvas.DrawBitmap(bmpSideFrame, 0, 0);
