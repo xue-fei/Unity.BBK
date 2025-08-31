@@ -134,8 +134,8 @@ namespace BBKRPGSimulator
                 curTime = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
                 if (curTime - lastTime > _context.LoopInterval)
                 {
-                    try
-                    {
+                    //try
+                    //{
                         lock (_context.ScreenStack)
                         {
                             curTime = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
@@ -150,11 +150,11 @@ namespace BBKRPGSimulator
 
                             RenderFrame?.Invoke(_mainCanvas.Background);
                         }
-                    }
-                    catch (Exception ex)
-                    {
-                        Debug.LogException(ex);
-                    }
+                    //}
+                    //catch (Exception ex)
+                    //{
+                    //    Debug.LogException(ex);
+                    //}
                 }
             }
         }
