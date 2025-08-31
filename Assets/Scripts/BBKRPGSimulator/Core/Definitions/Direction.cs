@@ -1,27 +1,27 @@
 namespace BBKRPGSimulator
 {
     /// <summary>
-    /// ·½Ïò
+    /// æ–¹å‘
     /// </summary>
     internal enum Direction
     {
         /// <summary>
-        /// ±±
+        /// åŒ—
         /// </summary>
         North,
 
         /// <summary>
-        /// ¶«
+        /// ä¸œ
         /// </summary>
         East,
 
         /// <summary>
-        /// ÄÏ
+        /// å—
         /// </summary>
         South,
 
         /// <summary>
-        /// Î÷
+        /// è¥¿
         /// </summary>
         West,
     }

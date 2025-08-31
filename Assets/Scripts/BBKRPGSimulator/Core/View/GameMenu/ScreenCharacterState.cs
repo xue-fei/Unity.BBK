@@ -6,33 +6,33 @@ using BBKRPGSimulator.Graphics;
 namespace BBKRPGSimulator.View.GameMenu
 {
     /// <summary>
-    /// ½ÇÉ«×´Ì¬½çÃæ
+    /// è§’è‰²çŠ¶æ€ç•Œé¢
     /// </summary>
     internal class ScreenCharacterState : BaseScreen
     {
-        #region ×Ö¶Î
+        #region å­—æ®µ
 
         /// <summary>
-        /// µ±Ç°½ÇÉ«ID
+        /// å½“å‰è§’è‰²ID
         /// </summary>
         private int _curCharacterId = 0;
 
         /// <summary>
-        /// µ±Ç°ÏÔÊ¾Ò³
+        /// å½“å‰æ˜¾ç¤ºé¡µ
         /// </summary>
         private int _page = 0;
 
         /// <summary>
-        /// ½ÇÉ«ÁĞ±í
+        /// è§’è‰²åˆ—è¡¨
         /// </summary>
         private List<PlayerCharacter> _playerList = null;
 
-        #endregion ×Ö¶Î
+        #endregion å­—æ®µ
 
-        #region ¹¹Ôìº¯Êı
+        #region æ„é€ å‡½æ•°
 
         /// <summary>
-        /// ½ÇÉ«×´Ì¬½çÃæ
+        /// è§’è‰²çŠ¶æ€ç•Œé¢
         /// </summary>
         /// <param name="context"></param>
         public ScreenCharacterState(SimulatorContext context) : base(context)
@@ -40,9 +40,9 @@ namespace BBKRPGSimulator.View.GameMenu
             _playerList = Context.PlayContext.PlayerCharacters;
         }
 
-        #endregion ¹¹Ôìº¯Êı
+        #endregion æ„é€ å‡½æ•°
 
-        #region ·½·¨
+        #region æ–¹æ³•
 
         public override void Draw(ICanvas canvas)
         {
@@ -97,6 +97,6 @@ namespace BBKRPGSimulator.View.GameMenu
         public override void Update(long delta)
         { }
 
-        #endregion ·½·¨
+        #endregion æ–¹æ³•
     }
 }

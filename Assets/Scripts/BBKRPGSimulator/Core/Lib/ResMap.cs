@@ -34,7 +34,7 @@ namespace BBKRPGSimulator.Lib
         private Tiles _tiles;
 
         /// <summary>
-        /// 该地图所用的til图块资源的索引号
+        /// 该地图所用的tile图块资源的索引号
         /// </summary>
         private int _tilIndex;
 

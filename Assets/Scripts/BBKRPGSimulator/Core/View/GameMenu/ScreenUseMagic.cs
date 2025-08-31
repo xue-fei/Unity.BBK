@@ -8,47 +8,47 @@ using BBKRPGSimulator.Magic;
 namespace BBKRPGSimulator.View.GameMenu
 {
     /// <summary>
-    /// Ä§·¨Ê¹ÓÃ½çÃæ
+    /// é­”æ³•ä½¿ç”¨ç•Œé¢
     /// </summary>
     internal class ScreenUseMagic : BaseScreen
     {
-        #region ¾²Ì¬¶¨Òå
+        #region é™æ€å®šä¹‰
 
         /// <summary>
-        /// Ãû³Æ¿ò
+        /// åç§°æ¡†
         /// </summary>
         private static readonly Rectangle _nameRect = new Rectangle(4, 4, 33, 92);
 
-        #endregion ¾²Ì¬¶¨Òå
+        #endregion é™æ€å®šä¹‰
 
-        #region ×Ö¶Î
+        #region å­—æ®µ
 
         /// <summary>
-        /// µ±Ç°Õ¹Ê¾µÄ×´Ì¬Ò³ÃæË÷Òı
+        /// å½“å‰å±•ç¤ºçš„çŠ¶æ€é¡µé¢ç´¢å¼•
         /// </summary>
         private int _curStatePageIndex = 0;
 
         /// <summary>
-        /// ÒªÊ¹ÓÃµÄÄ§·¨
+        /// è¦ä½¿ç”¨çš„é­”æ³•
         /// </summary>
         private MagicRestore _magic;
 
         /// <summary>
-        /// Ä§·¨Ê¹ÓÃ½ÇÉ«
+        /// é­”æ³•ä½¿ç”¨è§’è‰²
         /// </summary>
         private PlayerCharacter _magicUser;
 
         /// <summary>
-        /// µ±Ç°Ñ¡Ôñ½ÇÉ«Ë÷Òı
+        /// å½“å‰é€‰æ‹©è§’è‰²ç´¢å¼•
         /// </summary>
         private int _selectedCharacterIndex = 0;
 
-        #endregion ×Ö¶Î
+        #endregion å­—æ®µ
 
-        #region ¹¹Ôìº¯Êı
+        #region æ„é€ å‡½æ•°
 
         /// <summary>
-        /// Ä§·¨Ê¹ÓÃ½çÃæ
+        /// é­”æ³•ä½¿ç”¨ç•Œé¢
         /// </summary>
         /// <param name="context"></param>
         /// <param name="magic"></param>
@@ -59,9 +59,9 @@ namespace BBKRPGSimulator.View.GameMenu
             _magicUser = scr;
         }
 
-        #endregion ¹¹Ôìº¯Êı
+        #endregion æ„é€ å‡½æ•°
 
-        #region ·½·¨
+        #region æ–¹æ³•
 
         public override void Draw(ICanvas canvas)
         {
@@ -105,6 +105,6 @@ namespace BBKRPGSimulator.View.GameMenu
         {
         }
 
-        #endregion ·½·¨
+        #endregion æ–¹æ³•
     }
 }
