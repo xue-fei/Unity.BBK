@@ -93,7 +93,7 @@ namespace BBKRPGSimulator.Characters
             if (x + _image.Width > 0 && x < 160 - 16 &&
                     y + _image.Height > 0 && y < 96)
             {
-                _image.Draw(canvas, _face + OFFSET[Step], x + Constants.MAP_LEFT_OFFSET, y);
+                _image.Draw(canvas, _face + OFFSET[Step], x, y);
             }
         }
 
