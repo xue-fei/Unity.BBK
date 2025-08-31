@@ -70,7 +70,7 @@ public class UnitySimulator : MonoBehaviour
     {
         Application.targetFrameRate = 30;
         Application.runInBackground = true;
-        texture2D = new Texture2D(160, 96, TextureFormat.ARGB32, false);
+        texture2D = new Texture2D(Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT, TextureFormat.ARGB32, false);
         image.material.mainTexture = texture2D;
         _simulator = gameObject.AddComponent<RPGSimulator>();
         _simulator.RenderFrame += GameViewRenderFrame;
@@ -105,6 +105,14 @@ public class UnitySimulator : MonoBehaviour
         //{
         //    _simulator.KeyReleased(SimulatorKeys.KEY_ENTER);
         //}
+        if (Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            _simulator.KeyPressed(SimulatorKeys.KEY_ENTER);
+        }
+        if (Input.GetKeyUp(KeyCode.KeypadEnter))
+        {
+            _simulator.KeyReleased(SimulatorKeys.KEY_ENTER);
+        }
         if (Input.GetKeyDown(KeyCode.Return))
         {
             _simulator.KeyPressed(SimulatorKeys.KEY_ENTER);
