@@ -90,8 +90,8 @@ namespace BBKRPGSimulator.Characters
         public void Draw(ICanvas canvas, int x, int y)
         {
             y = y + 16 - _image.Height;
-            if (x + _image.Width > 0 && x < 160 - 16 &&
-                    y + _image.Height > 0 && y < 96)
+            if (x + _image.Width > 0 && x < Constants.SCREEN_WIDTH - 16 &&
+                    y + _image.Height > 0 && y < Constants.SCREEN_HEIGHT)
             {
                 _image.Draw(canvas, _face + OFFSET[Step], x, y);
             }
