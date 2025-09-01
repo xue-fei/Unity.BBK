@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/BBKRPGSimulator.unity
+    path: Assets/Scenes/bbkrpg-unity.unity
     guid: a73cf1d8e10a46f4d906ebef3df3c33a
   m_configObjects: {}

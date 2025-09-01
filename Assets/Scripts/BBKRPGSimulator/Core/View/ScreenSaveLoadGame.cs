@@ -171,15 +171,15 @@ namespace BBKRPGSimulator.View
             }
             else if (key == SimulatorKeys.KEY_ENTER)
             {
-                if(_texts[_index] == _empty)
-                {
-                    return;
-                }
                 var fileName = @Application.persistentDataPath + "/" + Context.LibData.Hash + "_" + _index;
                 Stream stream = Context.StreamProvider.GetOrCreateStream(fileName);
 
                 if (_curOperate == SaveLoadOperate.LOAD)
                 {
+                    if (_texts[_index] == _empty)
+                    {
+                        return;
+                    }
                     // 加载存档
                     if (stream is null)
                     {
