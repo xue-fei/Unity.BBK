@@ -82,7 +82,7 @@ namespace BBKRPGSimulator.View
 
             for (int i = 0; i < 3; i++)
             {
-                string fileName = @Application.persistentDataPath + $"/" + context.LibData.Hash + "_" + i;
+                string fileName = @Application.persistentDataPath + $"/" + context.LibData.Name + "_" + i;
 
                 Stream stream = Context.StreamProvider.GetStream(fileName);
                 if (stream != null)
@@ -171,7 +171,7 @@ namespace BBKRPGSimulator.View
             }
             else if (key == SimulatorKeys.KEY_ENTER)
             {
-                var fileName = @Application.persistentDataPath + "/" + Context.LibData.Hash + "_" + _index;
+                var fileName = @Application.persistentDataPath + "/" + Context.LibData.Name + "_" + _index;
                 Stream stream = Context.StreamProvider.GetOrCreateStream(fileName);
 
                 if (_curOperate == SaveLoadOperate.LOAD)
