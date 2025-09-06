@@ -7,11 +7,11 @@ using BBKRPGSimulator.Lib;
 namespace BBKRPGSimulator.Combat.Anim
 {
     /// <summary>
-    /// Êı×ÖÆ®Æğ¶¯»­
+    /// æ•°å­—é£˜èµ·åŠ¨ç”»
     /// </summary>
     internal class RaiseAnimation : ContextDependent
     {
-        #region ×Ö¶Î
+        #region å­—æ®µ
 
         private bool bShowNum;
         private long cnt = 0;
@@ -19,20 +19,20 @@ namespace BBKRPGSimulator.Combat.Anim
         private ImageBuilder raiseNum;
         private List<ResSrs> srsList;
 
-        #endregion ×Ö¶Î
+        #endregion å­—æ®µ
 
-        #region ÊôĞÔ
+        #region å±æ€§
 
         public int X { get; set; }
 
         public int Y { get; set; }
 
-        #endregion ÊôĞÔ
+        #endregion å±æ€§
 
-        #region ¹¹Ôìº¯Êı
+        #region æ„é€ å‡½æ•°
 
         /// <summary>
-        /// Êı×ÖÆ®Æğ¶¯»­
+        /// æ•°å­—é£˜èµ·åŠ¨ç”»
         /// </summary>
         /// <param name="context"></param>
         /// <param name="x"></param>
@@ -83,9 +83,9 @@ namespace BBKRPGSimulator.Combat.Anim
             }
         }
 
-        #endregion ¹¹Ôìº¯Êı
+        #endregion æ„é€ å‡½æ•°
 
-        #region ·½·¨
+        #region æ–¹æ³•
 
         public void Draw(ICanvas canvas)
         {
@@ -103,7 +103,7 @@ namespace BBKRPGSimulator.Combat.Anim
         }
 
         /// <summary>
-        /// ²¥·ÅÍê³É·µ»Øfalse£¬·ñÔò·µ»Øtrue
+        /// æ’­æ”¾å®Œæˆè¿”å›falseï¼Œå¦åˆ™è¿”å›true
         /// </summary>
         /// <param name="delta"></param>
         /// <returns></returns>
@@ -141,6 +141,6 @@ namespace BBKRPGSimulator.Combat.Anim
             return true;
         }
 
-        #endregion ·½·¨
+        #endregion æ–¹æ³•
     }
 }
