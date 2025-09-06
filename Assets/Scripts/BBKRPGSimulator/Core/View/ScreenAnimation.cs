@@ -52,7 +52,8 @@ namespace BBKRPGSimulator.View
         public override void Draw(ICanvas canvas)
         {
             canvas.DrawColor(Constants.COLOR_WHITE);
-            _animation.Draw(canvas, 0, 0);
+            _animation.Draw(canvas, Constants.SCREEN_WIDTH / 2 - Constants.WIDTH / 2,
+                Constants.SCREEN_HEIGHT / 2 - Constants.HIGHT / 2);
         }
 
         public override void OnKeyDown(int key)
