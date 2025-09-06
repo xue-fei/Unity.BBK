@@ -60,8 +60,8 @@ namespace BBKRPGSimulator.View
             }
             _cursors = cursors;
 
-            _left = (160 - _menuImg.Width) / 2;
-            _top = (96 - _menuImg.Height) / 2;
+            _left = (Constants.SCREEN_WIDTH - _menuImg.Width) / 2;
+            _top = (Constants.SCREEN_HEIGHT - _menuImg.Height) / 2;
         }
 
         #endregion 构造函数
@@ -72,7 +72,8 @@ namespace BBKRPGSimulator.View
         {
             canvas.DrawColor(Constants.COLOR_WHITE);
             _menuImg.Draw(canvas, 1, _left, _top);
-            _cursors[_selectedIndex].Draw(canvas, 0, 0);
+            _cursors[_selectedIndex].Draw(canvas, Constants.SCREEN_WIDTH / 2 - Constants.WIDTH / 2,
+                Constants.SCREEN_HEIGHT / 2 - Constants.HIGHT / 2);
         }
 
         public override void OnKeyDown(int key)
