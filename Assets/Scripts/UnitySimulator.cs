@@ -22,7 +22,7 @@ public class UnitySimulator : MonoBehaviour
     private static extern bool IsMobile();
 #endif
 
-    float currentTime = 0.5f;
+    float currentTime = 0.3f;
     float invokeTime;
 
     private void Awake()
