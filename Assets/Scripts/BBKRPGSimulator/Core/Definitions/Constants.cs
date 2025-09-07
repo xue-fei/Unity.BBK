@@ -21,7 +21,7 @@ namespace BBKRPGSimulator
         /// </summary>
         public const int SCREEN_WIDTH = 320;
 
-        public const int HIGHT = 96;
+        public const int HEIGHT = 96;
         public const int WIDTH = 160; 
         #endregion 字段
     }
